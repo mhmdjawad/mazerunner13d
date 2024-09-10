@@ -1418,8 +1418,8 @@ class Game{
         if(this.windowaspect > 1){
             CELLSIZE = 16*2;
         }
-        GameDimR = Math.floor(window.innerHeight/CELLSIZE) - 0.5;
-        GameDimC = Math.floor(window.innerWidth/CELLSIZE)-0.5;
+        GameDimR = Math.floor(window.innerHeight/CELLSIZE) - 1.5;
+        GameDimC = Math.floor(window.innerWidth/CELLSIZE)- 1;
         this.helpdom = document.createElement('div');
         document.body.innerHTML = ``;
         G.loadImage('spritesheet.gif?'+Math.random(),img=>{
@@ -1556,11 +1556,6 @@ class Game{
         this.prepFootercontrols();
         // document.body.requestFullscreen();
         this.windowaspect = window.innerHeight/window.innerWidth;
-        if(this.windowaspect > 1){
-            CELLSIZE = 16*2;
-            GameDimR = 12;
-            GameDimC = Math.floor(window.innerWidth/CELLSIZE);
-        }
         this.startingMazePoint = G.Point({x:CELLSIZE/2,y:CELLSIZE/2});
         this.player = new Player(this,this.startingMazePoint);
         this.objects = [];
@@ -1580,8 +1575,8 @@ class Game{
         this.gamePased = false;
         this.level = level;
         this.leveldom.innerHTML = this.level;
-        var r = 20 + this.level * 5;
-        var c = 20 + this.level * 5;
+        var r = 40 + this.level * 5;
+        var c = 40 + this.level * 5;
         this.objects = [];
         this.player.resetPos(this.startingMazePoint);
         this.mazeMap = new MazeGenerator(c,r);

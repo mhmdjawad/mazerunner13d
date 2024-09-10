@@ -9,6 +9,6 @@
     <link rel="stylesheet" href="style.css?<?= time() ?>">
 </head>
 <body>
-    <script src="main.js?<?= time() ?>" ></script>
+    <script src="game.js?<?= time() ?>" ></script>
 </body>
 </html>
